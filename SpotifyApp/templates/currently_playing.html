@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currently Playing</title>
+</head>
+<body>
+    <h1>Currently Playing</h1>
+    {% if currently_playing %}
+        <p><strong>Artist:</strong> {{ currently_playing.artists[0].name }}</p>
+        <p><strong>Song:</strong> {{ currently_playing.item.name }}</p>
+        <p><strong>Album:</strong> {{ currently_playing.item.album.name }}</p>
+        <p><img src="{{ currently_playing.item.album.images[0].url }}" alt="Album Artwork"></p>
+    {% else %}
+        <p>No music currently playing.</p>
+    {% endif %}
+</body>
+</html>
